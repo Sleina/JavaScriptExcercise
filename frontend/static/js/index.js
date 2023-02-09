@@ -1,6 +1,8 @@
 import Dashboard from "./views/Dashboard.js";
 import Posts from "./views/Posts.js";
 import Settings from "./views/Settings.js";
+import api from './getapi.js';
+
 
 const navigateTo = url => {
     history.pushState(null, null, url);
@@ -55,3 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     router();
 })
+
+document.addEventListener('DOMContentLoaded', async function() {
+    const outfits = await api.getOutfits();
+    const outfitContainer = document.querySelector('#outfit-container');
+    outfits.forEach(outfit => {
+      const outfitDiv = document.createElement('div');
+      outfitDiv.innerHTML = outfit.name;
+      outfitContainer.appendChild(outfitDiv);
+    });
+  });

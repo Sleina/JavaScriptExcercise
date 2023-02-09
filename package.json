@@ -4,7 +4,7 @@
   "description": "1. build a simple REST API using Node.js and the Express framework. This API is going to allow users to post comments to a web server, as well as retrieve a comment once posted.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
