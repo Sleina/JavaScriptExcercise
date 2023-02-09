@@ -1,0 +1,27 @@
+{
+  "name": "javascriptexcercise",
+  "version": "1.0.0",
+  "description": "1. build a simple REST API using Node.js and the Express framework. This API is going to allow users to post comments to a web server, as well as retrieve a comment once posted.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sleina/JavaScriptExcercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sleina/JavaScriptExcercise/issues"
+  },
+  "homepage": "https://github.com/Sleina/JavaScriptExcercise#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "uuid": "^9.0.0"
+  }
+}
