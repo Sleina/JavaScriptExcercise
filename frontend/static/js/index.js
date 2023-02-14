@@ -1,7 +1,8 @@
 import Dashboard from "./views/Dashboard.js";
 import Posts from "./views/Posts.js";
 import Settings from "./views/Settings.js";
-import api from './getapi.js';
+import api from "./views/Outfits.js";
+import Outfits from "./views/Outfits.js";
 
 
 const navigateTo = url => {
@@ -14,6 +15,7 @@ const router = async () => {
         { path: "/", view: Dashboard },
         { path: "/posts", view: Posts },
         { path: "/settings", view: Settings },
+        { path: "/outfits", view: Outfits },
 
     ];
 
@@ -59,11 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.addEventListener('DOMContentLoaded', async function() {
-    const outfits = await api.getOutfits();
+    const outfitsView = new Outfits();
+    const outfit = await outfitsView.getOutfits();
     const outfitContainer = document.querySelector('#outfit-container');
-    outfits.forEach(outfit => {
-      const outfitDiv = document.createElement('div');
-      outfitDiv.innerHTML = outfit.name;
-      outfitContainer.appendChild(outfitDiv);
-    });
-  });
+    const outfitDiv = document.createElement('div');
+    outfitDiv.innerHTML = `Top: ${outfit.top}, Jeans: ${outfit.jeans}, Shoes: ${outfit.shoes}`;
+    outfitContainer.appendChild(outfitDiv);
+    
+});
+
+
+
